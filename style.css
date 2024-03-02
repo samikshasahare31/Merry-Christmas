@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+.contanier {
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.santa {
+  background-image: url("Santa.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 5px;
+  height: 400px;
+  width: 300px;
+  right: -100%;
+  animation: santa 13s linear infinite forwards;
+}
+
+.text {
+  font-family: "Mountains of Christmas", cursive;
+  text-align: center;
+  font-size: 10rem;
+  background: linear-gradient(
+    to right,
+    #fff 30%,
+    #ff0000 40%,
+    #ff0000 60%,
+    #fff 70%
+  );
+  background-size: 200% auto;
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: changeColor 5s linear infinite;
+}
+
+.flake {
+  position: absolute;
+  z-index: 1;
+  animation: fall 3s linear forwards;
+  color: white;
+  font-size: 0.75rem;
+}
+
+#unmuteButton {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  position: absolute;
+  border-radius: 5px;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+#unmuteButton:active {
+  transform: scale(0.98);
+}
+#unmuteButton:focus {
+  outline: none;
+}
+@keyframes fall {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: calc(100vh - 0.75rem);
+  }
+}
+
+@keyframes changeColor {
+  to {
+    background-position: -200% center;
+  }
+}
+@keyframes santa {
+  0% {
+    right: -100%;
+  }
+
+  100% {
+    right: 100%;
+  }
+}
